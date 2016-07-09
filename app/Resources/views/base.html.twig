@@ -11,8 +11,48 @@
             <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
             {% stylesheets 'assets/css/*' filter='cssrewrite' %}
                 <link rel="stylesheet" href="{{ asset_url }}" />
-            {% endstylesheets %}
 
+            {% endstylesheets %}
+            <style>
+                .cropit-preview {
+                    background-color: #f8f8f8;
+                    background-size: cover;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    margin-top: 7px;
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .cropit-preview-image-container {
+                    cursor: move;
+                }
+
+                .image-size-label {
+                    margin-top: 10px;
+                }
+
+                input {
+                    display: block;
+                }
+
+                button[type="submit"] {
+                    margin-top: 10px;
+                }
+
+                #result {
+                    margin-top: 10px;
+                    width: 900px;
+                }
+
+                #result-data {
+                    display: block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    word-wrap: break-word;
+                }
+            </style>
 
         {% endblock %}
 
@@ -26,8 +66,30 @@
 
             <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
             <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('assets/dist/jquery.cropit.js') }}"></script>
+            <script src="{{ asset('assets/dist/masonary.pkgd.js') }}"></script>
+            <script>
+                $(function() {
+                    $('.image-editor').cropit({
+                        imageState: {
+                            src: 'http://lorempixel.com/500/400/',
+                        },
+                    });
 
+                    $('.rotate-cw').click(function() {
+                        $('.image-editor').cropit('rotateCW');
+                    });
+                    $('.rotate-ccw').click(function() {
+                        $('.image-editor').cropit('rotateCCW');
+                    });
 
+                    $('.export').click(function() {
+                        var imageData = $('.image-editor').cropit('export');
+                        
+                        window.open(imageData);
+                    });
+                });
+            </script>
         {% endblock %}
     </body>
 </html>

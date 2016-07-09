@@ -1,0 +1,149 @@
+/* 
+    Created on : 05-Jul-2016, 11:49:18
+    Author     : rmill_000
+*/
+.masonry.masonry--percent-width .grid-sizer { width: 20%; }
+.masonry.masonry--percent-width .item { width: 20%; }
+.masonry.masonry--percent-width .item.w2,
+.masonry.masonry--percent-width .item.w3 { width: 40%; }
+#row-height-demo2 .grid-sizer {
+  height: 60px;
+}
+
+#gutter-opt-demo3 .gutter-sizer {
+  width: 3%;
+}
+#animate-item-size-responsive .item,
+#animate-item-size-responsive .grid-sizer {
+  width: 20%;
+}
+
+#animate-item-size-responsive .item-content {
+  width:  100%;
+  height: 100%;
+}
+
+/* item has expanded size */
+#animate-item-size-responsive .item.is-expanded {
+  width: 60%;
+}
+.grid--animate-item-size-responsive .animate-item-size-item,
+.grid--animate-item-size-responsive .grid-sizer {
+  width: 20%;
+}
+
+.grid--animate-item-size-responsive .animate-item-size-item__content,
+.grid--animate-item-size-responsive .animate-item-size-item.is-expanded .animate-item-size-item__content {
+  width: 100%;
+  height: 100%;
+}
+
+/* item has expanded size */
+.grid--animate-item-size-responsive .animate-item-size-item.is-expanded {
+  width: 60%;
+}
+
+.bootstrap-3__grid-item-content {
+  height: 100px;
+  background: #D26;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+}
+.bootstrap-3__grid-item-content--height2 { 
+    height: 200px; 
+}
+.grid--centered {
+  margin: 10px auto;
+}
+
+.grid--counting {
+  counter-reset: grid-item;
+}
+.grid--counting .grid-item:before {
+  counter-increment: grid-item;
+  content: counter(grid-item);
+  display: block;
+  color: white;
+  padding-top: 0.2em;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.grid-item {
+  width: 200px;
+  float: left;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+  padding:3px;
+  margin: 4px;
+}
+
+.grid-item-h {
+  width: 200px;
+  float: left;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+}
+.grid-item-v {
+  width: 100px;
+  float: left;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+}
+
+.grid-item--width2 { width:  160px; }
+.grid-item--width3 { width:  240px; }
+
+.grid-item--height2 { height: 100px; }
+.grid-item--height3 { height: 140px; }
+.grid-item--height4 { height: 180px; }
+
+.grid-item--gigante {
+  width: 240px;
+  height: 180px;
+  background: #F90;
+  z-index: 2; /* keep it above other items */
+}
+
+/* ---- clickable ---- */
+
+.grid--clickable .grid-item:hover {
+  border-color: white;
+  background: #A2C;
+  cursor: pointer;
+}
+
+/* ---- fluid-5-col ---- */
+
+.grid--fluid-5-col .grid-sizer,
+.grid--fluid-5-col .grid-item { width: 20%; }
+
+.grid--fluid-5-col .grid-item--width2,
+.grid--fluid-5-col .grid-item--width3 {
+  width: 40%;
+}
+
+/* ---- gutter ---- */
+
+.grid--gutter .grid-item--width2 { width: 170px; }
+.grid--gutter .grid-item--width3 { width: 260px; }
+
+.grid--gutter-bottom .grid-item { margin-bottom: 10px; }
+
+/* ---- grid--fluid-gutter ---- */
+
+.grid--fluid-gutter .grid-item,
+.grid--fluid-gutter .grid-sizer {
+  width: 22%;
+}
+
+.grid--fluid-gutter .gutter-sizer {
+  width: 4%;
+}
+
+.grid--fluid-gutter .grid-item--width2,
+.grid--fluid-gutter .grid-item--width3 {
+  width: 48%;
+}

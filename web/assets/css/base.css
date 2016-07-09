@@ -14,3 +14,29 @@ form label{
     display: inline-block;
     text-align: left;
 }
+@font-face {
+    font-family: iwebfont;
+    src: url(../fonts/12585.ttf);
+}
+.mainheader{
+    background:#9acfea;
+    font-family: iwebfont;
+    color: #0f0f0f;
+    text-align: center;
+    width:100%;
+    display: block;
+}
+.logo_sm{
+    width:25px;
+}
+.logo_sm img{
+    height: 36px;
+    margin: 0 10px 0 0;
+}
+.navbar-brand{
+
+    font-family: iwebfont;
+    display: block;
+    z-index: 99999;
+    height: 86px;
+}

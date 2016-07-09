@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\blockContent;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -35,6 +36,9 @@ class AdminBaseController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function add_productAction(Request $request){
+
+
+        $form = $this->createNamedBuilder();
 
         $form = $this->createFormBuilder()
         ->setAction($this->generateUrl('add_product'))
@@ -75,6 +79,9 @@ class AdminBaseController extends Controller
         $reqData->setRepository("AppBundle:BlockContent");
         $requ = new BlockContent();
 
+
+
+
         $form = $this->createFormBuilder()
             ->setAction($this->generateUrl('add_article'))
             ->add("block_title", TextType::class)
@@ -103,7 +110,6 @@ class AdminBaseController extends Controller
             $requ->setBlockPageType($form->get("block_pageType")->getData());
             $requ->setBlockShow($form->get("block_show")->getData());
             $this->resultId = $reqData->comitDataId($requ);
-            echo $this->resultId;
         }
 
         return $this->render('admin/default/index.html.twig', array(
