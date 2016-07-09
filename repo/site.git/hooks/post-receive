@@ -1,2 +1,0 @@
-#!/bin/sh
-git --work-tree=/var/www/user54639.vs.easily.co.uk --git-dir=/var/repo/site.git checkout -f
